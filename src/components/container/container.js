@@ -3,7 +3,7 @@ import React from "react";
 import Sidebar from "components/container/sidebar";
 import DashboardHeader from "components/container/dashboard-header";
 
-const Container = () => {
+const Container = (props) => {
 	return (
 		<>
 			<DashboardHeader />

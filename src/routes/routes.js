@@ -1,8 +1,11 @@
-import { Route, Switch, useLocation } from "wouter";
+import { Route, Switch } from "wouter";
+
+import VauldScreen from "screen/vauld-screen";
+import WalletScreen from "screen/wallet-screen";
 
 const Routes = () => {
 	return (
-		<switch>
+		<Switch>
 			<Route
 				path="/wallet"
 				component={WalletScreen}
@@ -11,7 +14,7 @@ const Routes = () => {
 				path="/vauld"
 				component={VauldScreen}
 			/>
-		</switch>
+		</Switch>
 	);
 };
 

@@ -3,9 +3,7 @@ import thunk from "redux-thunk";
 
 const reducers = combineReducers({});
 
-let custom_config = {};
-
-const middlewares = [applyMiddleware(thunk), offline(custom_config), sentryReduxEnhancer];
+const middlewares = [applyMiddleware(thunk)];
 
 const enhancer = compose(...middlewares);
 
