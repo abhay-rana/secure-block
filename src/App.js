@@ -1,8 +1,15 @@
+import Routes from "routes/routes";
+
+import Container from "components/container/container";
+import ErrorBoundary from "components/container/error-boundary";
+
 function App() {
 	return (
-		<>
-			<div className="h-20 w-40">Hello Abhay</div>
-		</>
+		<ErrorBoundary>
+			<Container>
+				<Routes />
+			</Container>
+		</ErrorBoundary>
 	);
 }
 
