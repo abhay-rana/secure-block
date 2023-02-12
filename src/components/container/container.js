@@ -5,11 +5,15 @@ import DashboardHeader from "components/container/dashboard-header";
 
 const Container = (props) => {
 	return (
-		<>
+		<section className="relative flex min-h-screen w-screen flex-col">
 			<DashboardHeader />
-			<div>{props.children}</div>
-			<Sidebar />
-		</>
+			<div className="flex flex-row">
+				<div className="basis-[250px]">
+					<Sidebar />
+				</div>
+				<div className="relative px-6 py-10">{props.children}</div>
+			</div>
+		</section>
 	);
 };
 
