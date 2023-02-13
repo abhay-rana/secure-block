@@ -7,6 +7,7 @@ import store from "reducers/index";
 import "./styles/global.css";
 
 import App from "./App";
+import Home from "pages/home";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

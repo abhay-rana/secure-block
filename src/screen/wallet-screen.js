@@ -1,6 +1,7 @@
 import React from "react";
 
 import DashboardHero from "components/dashboard/dashboard-hero";
+import Home from "pages/home";
 
 const WalletScreen = () => {
 	return (

@@ -1,12 +1,6 @@
 import React from "react";
 import { useLocation } from "wouter";
 
-import { ReactComponent as Wallet } from "assets/svg/wallet-svg.svg";
-import { ReactComponent as Vauld } from "assets/svg/secure-vauld.svg";
-import { ReactComponent as Setting } from "assets/svg/setting.svg";
-import { ReactComponent as Lock } from "assets/svg/lock.svg";
-import { ReactComponent as Circle } from "assets/svg/circle.svg";
-
 import { IoMdWallet } from 'react-icons/io';
 import { IoSettingsSharp } from 'react-icons/io5'
 import { BsFillSafeFill } from 'react-icons/bs';
@@ -23,7 +17,6 @@ const Sidebar = () => {
 				onClick={() => setLocation("/wallet")}>
 				<div>
 					<IoMdWallet className={`h-[25px] ${location === "/wallet" ? "text-[white]" : "text-[gray]"}`} />
-					{/* <Wallet className={`h-[25px] text-[red] ${location === "/wallet" ? "text-[white]" : "text-[gray]"}`}/> */}
 				</div>
 				<p className={`text-[18px] font-normal cursor-pointer ${location === "/wallet" ? "text-[white]" : "text-[gray]"} `} onClick={() => setLocation("/wallet")}>Wallet</p>
 			</div>
@@ -32,8 +25,6 @@ const Sidebar = () => {
 			>
 				<div className="relative ">
 					<BsFillSafeFill className={`h-[25px] ${location === "/vauld" ? "text-[white]" : "text-[gray]"}`} />
-					{/* <Vauld className="h-[25px]"/>
-					<Lock className="absolute top-[10px] left-[11px]" /> */}
 				</div>
 				<p className={`text-[18px] font-normal cursor-pointer ${location === "/vauld" ? "text-[white]" : "text-[gray]"} `}>Smart Vauld</p>
 			</div>
@@ -42,8 +33,6 @@ const Sidebar = () => {
 			>
 				<div className="relative ">
 					<IoSettingsSharp className={`h-[25px] ${location === "/settings" ? "text-[white]" : "text-[gray]"}`} />
-					{/* <Setting className="h-[25px]"/>
-					<Circle className="absolute top-[9px] left-[11px]" /> */}
 				</div>
 				<p className={`text-[18px] font-normal cursor-pointer ${location === "/settings" ? "text-[white]" : "text-[gray]"} `} onClick={() => setLocation("/settings")}>Setting</p>
 			</div>
