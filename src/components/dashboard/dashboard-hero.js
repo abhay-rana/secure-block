@@ -2,22 +2,19 @@ import React, { useEffect } from "react";
 import { ReactComponent as Copy } from "assets/svg/copy.svg";
 
 const DashboardHero = () => {
-
 	useEffect(() => {
-		const listner = window.addEventListener('beforeunload', function (event) {
-			// event.preventDefault();
-			event.returnValue = 'please do not refresh';
+		const listener = window.addEventListener("beforeunload", (event) => {
+			event.returnValue = "please do not refresh";
 
-			if(event.returnValue == '') {
-				this.alert('please do not refresh')
+			if (event.returnValue == "") {
+				this.alert("please do not refresh");
 			}
-		  });
-		  
+		});
+
 		return () => {
-			window.removeEventListener('beforeunload', listner);
-		}
-	})
-	  
+			window.removeEventListener("beforeunload", listener);
+		};
+	}, []);
 
 	return (
 		<section
