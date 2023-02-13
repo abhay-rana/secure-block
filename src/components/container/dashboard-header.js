@@ -6,7 +6,7 @@ const DashboardHeader = () => {
 			<div className="flex h-[80px] w-screen flex-row justify-end  p-4">
 				<img
 					src="/assets/avatar-icon.png"
-					className="h-[50px] w-[50px] "
+					className="h-[40px] w-[40px]"
 				/>
 			</div>
 		</section>
