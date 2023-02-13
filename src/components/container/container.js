@@ -11,7 +11,7 @@ const Container = (props) => {
 				<div className="basis-[250px]">
 					<Sidebar />
 				</div>
-				<div className="relative px-6 py-10">{props.children}</div>
+				<div className="relative px-6 py-6">{props.children}</div>
 			</div>
 		</section>
 	);

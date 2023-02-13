@@ -2,20 +2,6 @@ import React, { useEffect } from "react";
 import { ReactComponent as Copy } from "assets/svg/copy.svg";
 
 const DashboardHero = () => {
-	useEffect(() => {
-		const listener = window.addEventListener("beforeunload", (event) => {
-			event.returnValue = "please do not refresh";
-
-			if (event.returnValue == "") {
-				this.alert("please do not refresh");
-			}
-		});
-
-		return () => {
-			window.removeEventListener("beforeunload", listener);
-		};
-	}, []);
-
 	return (
 		<section
 			id="dashboard_hero"
