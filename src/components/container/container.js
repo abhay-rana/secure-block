@@ -2,6 +2,8 @@ import React from "react";
 
 import Sidebar from "components/container/sidebar";
 import DashboardHeader from "components/container/dashboard-header";
+import AssetTransferModal from "components/container/asset-transfer-modal";
+import AssetTransferVaultModal from "components/container/asset-transfer-vault-modal";
 
 const Container = (props) => {
 	return (
@@ -13,6 +15,8 @@ const Container = (props) => {
 				</div>
 				<div className="relative px-6 py-6">{props.children}</div>
 			</div>
+			<AssetTransferModal />
+			<AssetTransferVaultModal />
 		</section>
 	);
 };

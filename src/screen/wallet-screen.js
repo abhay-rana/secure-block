@@ -23,15 +23,9 @@ const WalletScreen = () => {
 			id="wallet-screen"
 			className="flex flex-col gap-6"
 		>
-			<div>
-				<DashboardHero />
-			</div>
-			<div>
-				<AssetsPortfolioTab />
-			</div>
-			<div>
-				<AssetsTable />
-			</div>
+			<DashboardHero />
+			<AssetsPortfolioTab />
+			<AssetsTable />
 		</section>
 	);
 };

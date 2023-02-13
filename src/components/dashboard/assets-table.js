@@ -11,9 +11,9 @@ const AssetsTable = () => {
 			id="assets_table"
 			className="w-[650px] rounded-lg bg-[#181C1F] p-2"
 		>
-			<div class="relative overflow-x-auto shadow-md">
-				{[...Array(4)].map(() => (
-					<TableRow />
+			<div className="relative overflow-x-auto shadow-md">
+				{[...Array(4)].map((item, i) => (
+					<TableRow key={i} />
 				))}
 			</div>
 		</section>
@@ -23,9 +23,9 @@ const AssetsTable = () => {
 const TableRow = () => {
 	return (
 		<>
-			<table class="flex w-full text-left text-sm text-gray-500">
-				<tbody class="flex-1">
-					<tr class="flex flex-row justify-between border-b border-[#FFFFFF]">
+			<table className="flex w-full text-left text-sm text-gray-500">
+				<tbody className="flex-1">
+					<tr className="flex flex-row justify-between border-b border-[#FFFFFF]">
 						<td className="flex flex-row items-center gap-2 ">
 							<div className="">
 								<img src="/assets/matic.png" />
@@ -36,7 +36,7 @@ const TableRow = () => {
 							</div>
 						</td>
 
-						<td class="flex flex-row justify-end gap-2 px-6 py-4 text-right">
+						<td className="flex flex-row justify-end gap-2 px-6 py-4 text-right">
 							<Button
 								border
 								className="border-white font-bold text-white"
