@@ -42,7 +42,7 @@ const Home = () => {
                     <ul className="flex mr-6">
                         {(!isLogin) ? <>
                             <li className="m-2 text-[#10D854] font-bold cursor-pointer">Sign In</li>
-                            <li className="m-2 m-2 text-[#10D854] font-bold cursor-pointer" onClick={signUp}>Sign Up</li>
+                            <li className="m-2 text-[#10D854] font-bold cursor-pointer" onClick={signUp}>Sign Up</li>
                         </>
                             : <li className="m-2 border-[1px] border-[#10D854] p-2 rounded-lg text-[#10D854] font-bold cursor-pointer">Dashboard</li>
                         }
