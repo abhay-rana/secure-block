@@ -1,6 +1,6 @@
 import React from "react";
 
-const VauldScreen = () => {
+const VaultScreen = () => {
 	return (
 		<>
 			<div>VauldScreen</div>
@@ -8,4 +8,4 @@ const VauldScreen = () => {
 	);
 };
 
-export default VauldScreen;
+export default VaultScreen;

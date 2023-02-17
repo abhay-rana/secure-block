@@ -1,0 +1,52 @@
+.shake-y-anim {
+    animation : shake 4s infinite alternate-reverse;
+}
+.shake-y-d-anim {
+    animation : shake-y-d 4s infinite alternate-reverse;
+}
+.shake-x-anim {
+    animation : shake-x 4s infinite alternate-reverse;
+}
+.shake-d-anim {
+    animation : shake-d 4s infinite alternate-reverse;
+}
+
+@keyframes shake {
+    to {
+        transform: translateY(0px);
+    }
+
+    from {
+        transform: translateY(-60px);
+    }
+}
+
+@keyframes shake-y-d {
+    to {
+        transform: translateY(0px);
+    }
+
+    from {
+        transform: translateY(40px);
+    }
+}
+
+@keyframes shake-x {
+    to {
+        transform: translateX(0px);
+    }
+
+    from {
+        transform: translateX(-60px);
+    }
+}
+
+@keyframes shake-d {
+    to {
+        transform: translateX(0px);
+    }
+
+    from {
+        transform: translateX(40px);
+    }
+}
