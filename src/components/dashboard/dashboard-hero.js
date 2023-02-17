@@ -1,7 +1,14 @@
 import React, { useEffect } from "react";
 import { ReactComponent as Copy } from "assets/svg/copy.svg";
+import { useAccount, useEnsAvatar } from "wagmi";
 
 const DashboardHero = () => {
+	const {address, isConnected} = useAccount();
+	const {data, isError, isLoading} = useEnsAvatar({address})
+
+	useEffect(() => {
+		console.log(data)
+	}, [data])
 	return (
 		<section
 			id="dashboard_hero"
@@ -15,7 +22,7 @@ const DashboardHero = () => {
 			<div>suryakant.eth</div>
 			{/* user_address */}
 			<div className="flex flex-row gap-2">
-				<div className="text-gray-400">0x4bAe3A....dE816E</div>
+				<div className="text-gray-400">{address}</div>
 				<Copy className="h-5 w-5 self-center" />
 			</div>
 		</section>
