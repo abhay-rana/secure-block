@@ -7,7 +7,7 @@ import AssetTransferVaultModal from "components/container/asset-transfer-vault-m
 
 const Container = (props) => {
 	return (
-		<section className="relative flex min-h-screen w-screen flex-col">
+		<section className="relative flex min-h-screen w-full flex-col">
 			<DashboardHeader />
 			<div className="flex flex-row">
 				<div className="basis-[250px]">
@@ -16,7 +16,7 @@ const Container = (props) => {
 				<div className="relative px-6 py-6">{props.children}</div>
 			</div>
 			<AssetTransferModal />
-			<AssetTransferVaultModal />
+			<AssetTransferVaultModal id="vault_transfer_modal" />
 		</section>
 	);
 };

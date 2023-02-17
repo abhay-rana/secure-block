@@ -1,15 +1,19 @@
 import Routes from "routes/routes";
 
+import ModalProvider from "provider/portal-provider";
+
 import Container from "components/container/container";
 import ErrorBoundary from "components/container/error-boundary";
 
 function App() {
 	return (
-		<ErrorBoundary>
-			<Container>
-				<Routes />
-			</Container>
-		</ErrorBoundary>
+		<ModalProvider>
+			<ErrorBoundary>
+				<Container>
+					<Routes />
+				</Container>
+			</ErrorBoundary>
+		</ModalProvider>
 	);
 }
 
