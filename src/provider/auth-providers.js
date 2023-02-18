@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState } from 'react';
 import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { provider } from 'utils/firebase';
 import jwt_decode from 'jwt-decode';
@@ -22,7 +22,7 @@ export const useAuth = () => {
 const AuthProvider = ({ children }) => {
     const [is_success, setIsSuccess] = useState({ state: false, data: null });
     const [is_error, setISError] = useState({ state: false, msg: null });
-    const [is_login, setLogin] = useState(false);
+    const [is_login, setLogin] = useState(verifiedToken());
 
     const AuthSignUp = () => {
         const auth = getAuth();
@@ -42,6 +42,7 @@ const AuthProvider = ({ children }) => {
                     state: true,
                     data: user,
                 });
+                setLogin(true);
                 return Promise.resolve(result);
             })
             .catch((error) => {
@@ -58,20 +59,16 @@ const AuthProvider = ({ children }) => {
             });
     };
 
-    const verifiedToken = (token) => {
-        const decoded = jwt_decode(token);
-        const currentTime = parseInt(new Date().getTime() / 1000);
-        console.log(decoded, currentTime);
-        if (decoded.exp > currentTime) setLogin(true);
-    };
-
-    useEffect(() => {
-        const userToken = localStorage.getItem('token');
-        if (userToken !== null) {
-            console.log('TOKEN', userToken);
-            verifiedToken(userToken);
+    function verifiedToken() {
+        const userToken = localStorage.getItem('token') ?? false;
+        if (!!userToken) {
+            const decoded = jwt_decode(userToken);
+            const currentTime = parseInt(new Date().getTime() / 1000);
+            console.log(decoded, currentTime);
+            if (decoded.exp > currentTime) return true;
         }
-    }, []);
+        return userToken;
+    }
 
     return (
         <AuthContext.Provider

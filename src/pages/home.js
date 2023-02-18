@@ -77,7 +77,7 @@ const Home = () => {
 
             <div
                 id="feature"
-                className="relative mt-[60px] flex w-[100%] items-center justify-center pb-5"
+                className="relative mt-[60px] flex w-[100%] scroll-mt-16 items-center justify-center pb-5"
             >
                 <div className="h-[660px] w-[85%] rounded-[40px] bg-[#181C1F] opacity-25"></div>
                 <div className="absolute -top-5 left-[6%] h-[660px] w-[85%] rounded-[40px] bg-[#181C1F] ">
@@ -144,7 +144,7 @@ const Home = () => {
 
             <div
                 id="services"
-                className="relative mt-[60px] flex w-[100%] items-center justify-center pb-5"
+                className="relative mt-[60px] flex w-[100%] scroll-mt-11 items-center justify-center pb-5"
             >
                 <div className="h-[660px] w-[85%] rounded-[40px] bg-[#181C1F] opacity-25"></div>
                 <div className="absolute -top-5 left-[6%] h-[660px] w-[85%] rounded-[40px] bg-[#181C1F] ">
@@ -211,7 +211,7 @@ const Home = () => {
 
             <div
                 id="faq"
-                className="relative mt-[60px] flex w-[100%] items-center justify-center pb-5"
+                className="relative mt-[60px] flex w-[100%] scroll-mt-4 items-center justify-center pb-5"
             >
                 <div className="h-[660px] w-[85%] rounded-[40px] bg-[#181C1F] opacity-25"></div>
                 <div className="absolute -top-5 left-[6%] h-[660px] w-[85%] rounded-[40px] bg-[#181C1F] ">
@@ -278,7 +278,7 @@ const Home = () => {
 
             <div
                 id="team"
-                className="relative mt-[60px] flex w-[100%] items-center justify-center pb-5"
+                className="relative mt-[60px] flex w-[100%] scroll-mt-10 items-center justify-center pb-5"
             >
                 <div className="h-[660px] w-[85%] rounded-[40px] bg-[#181C1F] opacity-25"></div>
                 <div className="absolute -top-5 left-[6%] h-[660px] w-[85%] rounded-[40px] bg-[#181C1F] ">

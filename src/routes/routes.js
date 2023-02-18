@@ -13,8 +13,9 @@ const Routes = () => {
     const { is_login } = useAuth();
 
     useLayoutEffect(() => {
+        window.scrollTo(0, 0);
         if (is_login !== true) setLocation('/');
-    }, [location]);
+    }, [location, is_login]);
 
     return (
         <Switch>

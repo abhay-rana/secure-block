@@ -1,34 +1,42 @@
 import React, { useState } from 'react';
+import { useLocation } from 'wouter';
 
-import { ReactComponent as LogoSVG } from 'assets/svg/home-safeblock-logo.svg';
 import { useAuth } from 'provider/auth-providers';
 import { useModalUpdater } from 'provider/portal-provider';
 
+import { ReactComponent as LogoSVG } from 'assets/svg/home-safeblock-logo.svg';
+
+const selected_option_style = {
+    borderRadius: 4,
+    borderBottomWidth: 2,
+    borderBottomColor: '#10D854',
+};
+
 const HomeHeader = () => {
-    const {
-        is_success,
-        isError: is_error,
-        is_login,
-        user,
-        AuthSignUp,
-    } = useAuth();
+    const { isError: is_error, is_login, AuthSignUp } = useAuth();
+
     const [selectedOption, setSelectedOption] = useState();
     const { toggleModal } = useModalUpdater();
-
-    const selectOption = {
-        borderBottomColor: '#10D854',
-        borderBottomWidth: 2,
-        borderRadius: 4,
-    };
+    const [location, setLocation] = useLocation();
 
     const signUp = () => {
         AuthSignUp().then(() => toggleModal.show('signup_modal'));
     };
 
+    const goToSection = (section_id) => {
+        document.getElementById(section_id).scrollIntoView({
+            behavior: 'smooth',
+        });
+        setSelectedOption(section_id);
+    };
+
     return (
         <>
             <div className="sticky top-0 z-10 flex w-[100%] items-center justify-between bg-[transparent] backdrop-blur-[100px]">
-                <div className=" flex items-center p-1">
+                <div
+                    className=" flex items-center p-1"
+                    onClick={() => window.scrollTo(0, 0)}
+                >
                     <LogoSVG className="m-2" />
                     <p className="inter-font text-[20px] font-bold">
                         SafeBlock
@@ -40,15 +48,14 @@ const HomeHeader = () => {
                             className="m-2  cursor-pointer font-bold"
                             style={
                                 selectedOption === 'services'
-                                    ? selectOption
+                                    ? selected_option_style
                                     : null
                             }
                             onClick={() => {
-                                setSelectedOption('services');
+                                goToSection('services');
                             }}
                         >
-                            <a
-                                href="#services"
+                            <div
                                 style={{
                                     textDecoration: 'none',
                                     textDecorationStyle: 'none',
@@ -56,19 +63,18 @@ const HomeHeader = () => {
                                 }}
                             >
                                 Services
-                            </a>
+                            </div>
                         </li>
                         <li
                             className="m-2  cursor-pointer font-bold"
                             style={
                                 selectedOption === 'feature'
-                                    ? selectOption
+                                    ? selected_option_style
                                     : null
                             }
-                            onClick={() => setSelectedOption('feature')}
+                            onClick={() => goToSection('feature')}
                         >
-                            <a
-                                href="#feature"
+                            <div
                                 style={{
                                     textDecoration: 'none',
                                     textDecorationStyle: 'none',
@@ -76,17 +82,18 @@ const HomeHeader = () => {
                                 }}
                             >
                                 Features
-                            </a>
+                            </div>
                         </li>
                         <li
                             className="m-2  cursor-pointer font-bold"
                             style={
-                                selectedOption === 'team' ? selectOption : null
+                                selectedOption === 'team'
+                                    ? selected_option_style
+                                    : null
                             }
-                            onClick={() => setSelectedOption('team')}
+                            onClick={() => goToSection('team')}
                         >
-                            <a
-                                href="#team"
+                            <div
                                 style={{
                                     textDecoration: 'none',
                                     textDecorationStyle: 'none',
@@ -94,7 +101,7 @@ const HomeHeader = () => {
                                 }}
                             >
                                 Team
-                            </a>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -113,7 +120,10 @@ const HomeHeader = () => {
                                 </li>
                             </>
                         ) : (
-                            <li className="m-2 cursor-pointer rounded-lg border-[1px] border-[#10D854] p-2 font-bold text-[#10D854]">
+                            <li
+                                onClick={() => setLocation('/wallet')}
+                                className="m-2 cursor-pointer rounded-lg border-[1px] border-[#10D854] p-2 font-bold text-[#10D854]"
+                            >
                                 Dashboard
                             </li>
                         )}
