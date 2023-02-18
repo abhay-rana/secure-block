@@ -1,21 +1,23 @@
-import Routes from "routes/routes";
+import Routes from 'routes/routes'
 
-import ModalProvider from "provider/portal-provider";
+import AuthProvider from 'provider/auth-providers'
+import ModalProvider from 'provider/portal-provider'
 
-import Container from "components/container/container";
-import ErrorBoundary from "components/container/error-boundary";
-import Home from "pages/home";
+import Container from 'components/container/container'
+import ErrorBoundary from 'components/container/error-boundary'
 
 function App() {
-	return (
-		<ModalProvider>
-			<ErrorBoundary>
-				<Container>
-					<Routes />
-				</Container>
-			</ErrorBoundary>
-		</ModalProvider>
-	);
+    return (
+        <ModalProvider>
+            <AuthProvider>
+                <ErrorBoundary>
+                    <Container>
+                        <Routes />
+                    </Container>
+                </ErrorBoundary>
+            </AuthProvider>
+        </ModalProvider>
+    )
 }
 
-export default App;
+export default App
