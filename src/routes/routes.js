@@ -10,10 +10,10 @@ import SettingScreen from 'screen/setting-screen';
 
 const Routes = () => {
     const [location, setLocation] = useLocation();
-    const { is_already_login } = useAuth();
+    const { is_login } = useAuth();
 
     useLayoutEffect(() => {
-        if (is_already_login !== true) setLocation('/');
+        if (is_login !== true) setLocation('/');
     }, [location]);
 
     return (

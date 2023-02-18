@@ -22,7 +22,7 @@ export const useAuth = () => {
 const AuthProvider = ({ children }) => {
     const [is_success, setIsSuccess] = useState({ state: false, data: null });
     const [is_error, setISError] = useState({ state: false, msg: null });
-    const [is_already_Login, setAlreadyLogin] = useState(false);
+    const [is_login, setLogin] = useState(false);
 
     const AuthSignUp = () => {
         const auth = getAuth();
@@ -62,7 +62,7 @@ const AuthProvider = ({ children }) => {
         const decoded = jwt_decode(token);
         const currentTime = parseInt(new Date().getTime() / 1000);
         console.log(decoded, currentTime);
-        if (decoded.exp > currentTime) setAlreadyLogin(true);
+        if (decoded.exp > currentTime) setLogin(true);
     };
 
     useEffect(() => {
@@ -80,7 +80,7 @@ const AuthProvider = ({ children }) => {
                 is_error: is_error.state,
                 user: is_success.data,
                 error: is_error.msg,
-                is_login: is_already_Login,
+                is_login,
                 AuthSignUp,
             }}
         >
