@@ -1,10 +1,20 @@
 import React from "react";
 
-const AssetTransferVaultModal = () => {
+import Modal from "components/modal/modal";
+
+const AssetTransferVaultModal = (props) => {
 	return (
-		<div>
-			<div>a</div>
-		</div>
+		<>
+			<Modal
+				className=""
+				{...props}
+			>
+				<div className="flex h-[500px] w-[450px] flex-col rounded-md bg-[#181C1F] p-4">
+					<div>one</div>
+					<div>teo</div>
+				</div>
+			</Modal>
+		</>
 	);
 };
 
