@@ -14,7 +14,7 @@ const selected_option_style = {
 
 const HomeHeader = () => {
     const { isError: is_error, is_login, AuthSignUp } = useAuth();
-
+    console.log(is_login);
     const [selectedOption, setSelectedOption] = useState();
     const { toggleModal } = useModalUpdater();
     const [location, setLocation] = useLocation();

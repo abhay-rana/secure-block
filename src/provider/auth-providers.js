@@ -3,15 +3,12 @@ import { getAuth, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { provider } from 'utils/firebase';
 import jwt_decode from 'jwt-decode';
 
-// create contexts
 const AuthContext = createContext();
 
-// context consumer hook
 export const useAuth = () => {
-    // get the context
     const context = useContext(AuthContext);
     console.log('context');
-    // if `undefined`, throw an error
+
     if (context === undefined) {
         throw new Error('useAuthContext was used outside of its Provider');
     }
@@ -66,6 +63,7 @@ const AuthProvider = ({ children }) => {
             const currentTime = parseInt(new Date().getTime() / 1000);
             console.log(decoded, currentTime);
             if (decoded.exp > currentTime) return true;
+            return false;
         }
         return userToken;
     }
