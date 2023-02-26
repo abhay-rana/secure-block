@@ -1,13 +1,13 @@
-import React from 'react'
-import { useLocation } from 'wouter'
+import React from 'react';
+import { useLocation } from 'wouter';
 
-import Header from 'components/container/header'
-import Sidebar from 'components/container/sidebar'
-import AssetTransferModal from 'components/container/asset-transfer-modal'
-import AssetTransferVaultModal from 'components/container/asset-transfer-vault-modal'
+import Header from 'components/container/header';
+import Sidebar from 'components/container/sidebar';
+import AssetTransferModal from 'components/container/asset-transfer-modal';
+import AssetTransferVaultModal from 'components/container/asset-transfer-vault-modal';
 
 const Container = (props) => {
-    const [location, setLocation] = useLocation()
+    const [location, setLocation] = useLocation();
     return (
         <section className="relative flex min-h-screen w-full flex-col">
             <Header />
@@ -22,10 +22,10 @@ const Container = (props) => {
                     {props.children}
                 </div>
             </div>
-            <AssetTransferModal />
+            <AssetTransferModal id="asset_transfer_modal" />
             <AssetTransferVaultModal id="vault_transfer_modal" />
         </section>
-    )
-}
+    );
+};
 
-export default Container
+export default Container;

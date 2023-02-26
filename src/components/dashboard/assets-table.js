@@ -15,7 +15,7 @@ const AssetsTable = () => {
     };
 
     const openTransferModal = () => {
-        toggleModal.show('');
+        toggleModal.show('asset_transfer_modal');
     };
 
     return (
